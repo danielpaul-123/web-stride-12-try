@@ -2,6 +2,18 @@
 
 Backend API for the STRIDE Community platform built with Node.js, Express, and MongoDB.
 
+## ☁️ Deploy to Cloud (Recommended)
+
+**Want to skip local setup?** Deploy directly to the cloud for free!
+
+👉 **[QUICKSTART.md](./QUICKSTART.md)** - Deploy in 20 minutes (no credit card needed)
+
+**Services:**
+- **Render** - Free backend hosting with auto-deploy
+- **MongoDB Atlas** - Free cloud database (512MB)
+
+---
+
 ## Features
 
 - **Authentication & Authorization**: JWT-based auth with role-based access control
