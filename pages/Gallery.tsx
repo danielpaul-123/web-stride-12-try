@@ -4,7 +4,7 @@ import { BlurFade } from '../components/ui/blur-fade';
 // Images curated for inclusive innovation, workshops, tech, and community
 // Replaced generic images with specific assistive tech / innovation themes
 const galleryImages = [
-  "https://images.unsplash.com/photo-1589254065878-42c9da9e2f58?auto=format&fit=crop&w=800&q=80", // Robotic Arm closeup
+  "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80", // Robotic Arm closeup
   "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop", // Person using assistive tech
   "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=800&auto=format&fit=crop", // 3D printing lab
   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop", // Diverse team collaboration
