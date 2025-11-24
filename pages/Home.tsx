@@ -18,7 +18,7 @@ const baseImages = [
   "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", // Lab equipment
   "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=800&auto=format&fit=crop", // 3D Printer
   "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop", // Professional woman
-  "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop", // Braille / Tactile
+  "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=800&q=80", // Braille / Tactile
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop", // Teamwork
   "https://images.unsplash.com/photo-1589254065878-42c9da9e2f58?q=80&w=800&auto=format&fit=crop", // Robot Hand
   "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop", // Digital Code
@@ -54,7 +54,7 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
-    <motion.li 
+    <motion.li
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -142,28 +142,28 @@ const carouselData = [
 
 export const Home: React.FC = () => {
   const { scrollY } = useScroll();
-  
+
   const carouselCards = carouselData.map((card, index) => (
     <Card key={index} card={card} index={index} />
   ));
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0 bg-dot-slate-200 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] pointer-events-none" />
-        
+
         {/* Spotlights with Breathing Animation */}
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-violet-500/10 blur-[120px] rounded-full pointer-events-none" 
+          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-violet-500/10 blur-[120px] rounded-full pointer-events-none"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-0 right-0 translate-x-1/3 w-[30rem] h-[30rem] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none" 
+          className="absolute bottom-0 right-0 translate-x-1/3 w-[30rem] h-[30rem] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -180,17 +180,17 @@ export const Home: React.FC = () => {
             Shaping the future of assistive tech
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]"
           >
-            Build for <br/>
+            Build for <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-600 animate-gradient">EveryBody.</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -199,14 +199,14 @@ export const Home: React.FC = () => {
             STRIDE connects innovation, manufacturing, and community to build a world where technology adapts to people, not the other way around.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/get-involved">
-               <ShinyButton text="Join the Ecosystem" />
+              <ShinyButton text="Join the Ecosystem" />
             </Link>
             <Link to="/products" className="px-8 py-4 rounded-full bg-white text-slate-900 font-bold border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex items-center gap-2 group">
               <span className="group-hover:translate-x-0.5 transition-transform">Explore Catalog</span> <ArrowRight size={18} />
@@ -227,102 +227,102 @@ export const Home: React.FC = () => {
 
       {/* The Challenge - Glowing Grid */}
       <section className="py-24 relative bg-slate-50">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">The Challenge</h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">Why we need a revolution in assistive technology today.</p>
-            </motion.div>
-         </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">The Challenge</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">Why we need a revolution in assistive technology today.</p>
+          </motion.div>
+        </div>
 
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-              <GridItem
-                area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-                icon={<Globe className="h-4 w-4 text-violet-600" />}
-                title="1 Billion+ People"
-                description="Over a billion people globally need assistive products. By 2050, this will rise to 2 billion. Yet, only 1 in 10 have access."
-              />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+            <GridItem
+              area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
+              icon={<Globe className="h-4 w-4 text-violet-600" />}
+              title="1 Billion+ People"
+              description="Over a billion people globally need assistive products. By 2050, this will rise to 2 billion. Yet, only 1 in 10 have access."
+            />
 
-              <GridItem
-                area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-                icon={<Activity className="h-4 w-4 text-cyan-600" />}
-                title="High Cost Barrier"
-                description="Traditional assistive tech is often prohibitively expensive due to import dependencies and lack of local manufacturing."
-              />
+            <GridItem
+              area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
+              icon={<Activity className="h-4 w-4 text-cyan-600" />}
+              title="High Cost Barrier"
+              description="Traditional assistive tech is often prohibitively expensive due to import dependencies and lack of local manufacturing."
+            />
 
-              <GridItem
-                area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-                icon={<Cpu className="h-4 w-4 text-orange-600" />}
-                title="Innovation Gap"
-                description="A disconnect between academic research and market needs means prototypes rarely reach users."
-              />
+            <GridItem
+              area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
+              icon={<Cpu className="h-4 w-4 text-orange-600" />}
+              title="Innovation Gap"
+              description="A disconnect between academic research and market needs means prototypes rarely reach users."
+            />
 
-              <GridItem
-                area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-                icon={<Users className="h-4 w-4 text-fuchsia-600" />}
-                title="Excluded Voices"
-                description="PwDs are often excluded from the design process, resulting in products that don't fit real-world needs."
-              />
+            <GridItem
+              area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
+              icon={<Users className="h-4 w-4 text-fuchsia-600" />}
+              title="Excluded Voices"
+              description="PwDs are often excluded from the design process, resulting in products that don't fit real-world needs."
+            />
 
-              <GridItem
-                area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-                icon={<Zap className="h-4 w-4 text-yellow-500" />}
-                title="The Opportunity"
-                description="By decentralizing production and democratizing design, we can lower costs and increase access for everyone."
-              />
-            </ul>
-         </div>
+            <GridItem
+              area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
+              icon={<Zap className="h-4 w-4 text-yellow-500" />}
+              title="The Opportunity"
+              description="By decentralizing production and democratizing design, we can lower costs and increase access for everyone."
+            />
+          </ul>
+        </div>
       </section>
 
       {/* The Solution - Apple Cards Carousel */}
       <section className="py-20 bg-white border-t border-slate-100">
-         <div className="max-w-7xl mx-auto px-4 pl-8">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Our Ecosystem</h2>
-            <p className="text-slate-600 text-lg max-w-2xl mb-8">
-              A comprehensive approach to solving the accessibility crisis.
-            </p>
-         </div>
-         <Carousel items={carouselCards} />
+        <div className="max-w-7xl mx-auto px-4 pl-8">
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Our Ecosystem</h2>
+          <p className="text-slate-600 text-lg max-w-2xl mb-8">
+            A comprehensive approach to solving the accessibility crisis.
+          </p>
+        </div>
+        <Carousel items={carouselCards} />
       </section>
 
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
-         <motion.div 
-           initial={{ scale: 0.95, opacity: 0 }}
-           whileInView={{ scale: 1, opacity: 1 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
-           className="max-w-7xl mx-auto rounded-[3rem] bg-slate-900 relative overflow-hidden text-center py-20 px-6 shadow-2xl"
-         >
-             {/* Background Effects */}
-             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                 <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] bg-violet-500/30 blur-[100px] rounded-full origin-center" />
-                 <motion.div animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] bg-cyan-500/30 blur-[100px] rounded-full origin-center" />
-             </div>
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto rounded-[3rem] bg-slate-900 relative overflow-hidden text-center py-20 px-6 shadow-2xl"
+        >
+          {/* Background Effects */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] bg-violet-500/30 blur-[100px] rounded-full origin-center" />
+            <motion.div animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] bg-cyan-500/30 blur-[100px] rounded-full origin-center" />
+          </div>
 
-             <div className="relative z-10 max-w-3xl mx-auto">
-                 <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
-                    Ready to make a <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Difference?</span>
-                 </h2>
-                 <p className="text-slate-300 text-xl mb-10">
-                    Whether you are a student, a professional, or an institution, there is a place for you in the STRIDE mission.
-                 </p>
-                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                     <Link to="/get-involved" className="px-10 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-cyan-500/25">
-                        Get Involved Now
-                     </Link>
-                     <Link to="/about" className="px-10 py-4 rounded-full bg-transparent border border-slate-600 text-white font-bold hover:bg-white/10 transition-colors">
-                        Learn More
-                     </Link>
-                 </div>
-             </div>
-         </motion.div>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              Ready to make a <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Difference?</span>
+            </h2>
+            <p className="text-slate-300 text-xl mb-10">
+              Whether you are a student, a professional, or an institution, there is a place for you in the STRIDE mission.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link to="/get-involved" className="px-10 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-cyan-500/25">
+                Get Involved Now
+              </Link>
+              <Link to="/about" className="px-10 py-4 rounded-full bg-transparent border border-slate-600 text-white font-bold hover:bg-white/10 transition-colors">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </section>
     </div>
   );

@@ -4,7 +4,7 @@ import { BlurFade } from '../components/ui/blur-fade';
 // Images curated for inclusive innovation, workshops, tech, and community
 // Replaced generic images with specific assistive tech / innovation themes
 const galleryImages = [
-  "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=800&auto=format&fit=crop", // Robotic Arm closeup
+  "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=800&q=80", // Robotic Arm closeup
   "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop", // Person using assistive tech
   "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=800&auto=format&fit=crop", // 3D printing lab
   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop", // Diverse team collaboration
@@ -12,7 +12,7 @@ const galleryImages = [
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop", // Students working
   "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", // Electronics Lab
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop", // Tech team huddle
-  "https://images.unsplash.com/photo-1618519655655-4673f8fb2587?q=80&w=800&auto=format&fit=crop", // Accessibility Ramp/Wheelchair
+  "https://images.unsplash.com/photo-1536849460588-696219a9e98d?auto=format&fit=crop&w=800&q=80", // Accessibility Ramp/Wheelchair
   "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop", // Diverse group hugging
   "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop", // Futuristic circuit
   "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop", // Coding screen
