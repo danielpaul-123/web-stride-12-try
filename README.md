@@ -1,18 +1,59 @@
+# STRIDE | Inclusive Innovation
 
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-# Run and deploy your AI Studio app
+## Overview
 
-This contains everything you need to run your app locally.
+The **STRIDE Community WebApp** is a platform designed to foster inclusive innovation. It connects members, campus admins, and the central STRIDE team, providing tools for collaboration, learning, and tracking progress.
 
-View your app in AI Studio: https://ai.studio/apps/drive/17Tu7rmDQqCldQD5HrNs9hzG7EMrl5x25
+## Features
+
+- **Home**: Landing page with an overview of STRIDE's mission and impact.
+- **About**: Information about the STRIDE initiative and its goals.
+- **Ecosystem**: Explore the various components of the STRIDE ecosystem.
+- **Products**: Showcase of innovative products developed within the community.
+- **Community**: Connect with other members and see what's happening.
+- **Get Involved**: Opportunities to participate in events and projects.
+- **Gallery**: Visual highlights from STRIDE events and activities.
+- **News**: Latest updates and announcements.
+- **Designathon**: (Coming Soon) A dedicated section for the upcoming Designathon 2026.
+
+## Tech Stack
+
+- **Frontend Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router](https://reactrouter.com/)
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js (v18+ recommended)
 
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/robinfrancis186/web-stride-12-try.git
+    cd web-stride-12-try
+    ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+## License
+
+This project is licensed under the MIT License.
