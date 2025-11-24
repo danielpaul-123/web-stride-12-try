@@ -18,7 +18,7 @@ const products: Product[] = [
     name: 'Smart Cane V2',
     price: '₹2,500',
     category: 'Mobility',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
     tag: 'Best Seller',
     description: 'Ultrasonic obstacle detection with haptic feedback.'
   },
@@ -35,7 +35,7 @@ const products: Product[] = [
     name: 'Braille Keyboard',
     price: '₹4,500',
     category: 'Computing',
-    image: 'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
     tag: 'Pro',
     description: 'Refreshable braille display with Bluetooth connectivity.'
   },
@@ -52,7 +52,7 @@ const products: Product[] = [
     name: 'Lightweight Ramp',
     price: '₹8,000',
     category: 'Accessibility',
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29609?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80',
     tag: 'New',
     description: 'Portable, carbon-fiber folding ramp for wheelchairs.'
   },
@@ -199,8 +199,8 @@ export const Products: React.FC = () => {
                     onClick={() => handleAddToCart(selectedProduct.id)}
                     disabled={addedToCart.includes(selectedProduct.id)}
                     className={`w-full py-4 font-bold rounded-xl transition shadow-lg flex items-center justify-center gap-2 ${addedToCart.includes(selectedProduct.id)
-                        ? 'bg-green-500 text-white cursor-default'
-                        : 'bg-slate-900 text-white hover:bg-slate-800'
+                      ? 'bg-green-500 text-white cursor-default'
+                      : 'bg-slate-900 text-white hover:bg-slate-800'
                       }`}
                   >
                     {addedToCart.includes(selectedProduct.id) ? (
