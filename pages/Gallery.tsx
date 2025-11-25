@@ -44,7 +44,7 @@ export const Gallery: React.FC = () => {
                 <img
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   src={imageUrl}
-                  alt={`Gallery image ${idx + 1}`}
+                  alt={`STRIDE Community Moment ${idx + 1} - Inclusive Innovation in Action`}
                   loading="lazy"
                 />
                 <div className="p-3 bg-white">
