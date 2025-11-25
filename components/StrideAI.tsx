@@ -109,7 +109,7 @@ export const StrideAI: React.FC = () => {
       <motion.button
         onClick={() => setIsOpen(true)}
         className={`fixed bottom - 6 right - 6 z - 40 w - 16 h - 16 rounded - full shadow - 2xl transition - all duration - 300 group flex items - center justify - center overflow - hidden ${
-    isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+  isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
 } `}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -186,9 +186,9 @@ export const StrideAI: React.FC = () => {
                 >
                   <div
                     className={`max - w - [85 %] p - 4 rounded - 2xl text - [15px] leading - relaxed backdrop - blur - md ${
-    msg.sender === 'user'
-        ? 'bg-blue-600 text-white rounded-br-sm shadow-lg shadow-blue-900/20'
-        : 'bg-white/10 text-slate-100 border border-white/10 rounded-bl-sm'
+  msg.sender === 'user'
+    ? 'bg-blue-600 text-white rounded-br-sm shadow-lg shadow-blue-900/20'
+    : 'bg-white/10 text-slate-100 border border-white/10 rounded-bl-sm'
 } `}
                   >
                     {msg.text}
