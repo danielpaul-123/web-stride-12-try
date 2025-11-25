@@ -1,4 +1,3 @@
-```
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Sparkles, Mic, Globe, ArrowRight } from 'lucide-react';
@@ -108,20 +107,19 @@ export const StrideAI: React.FC = () => {
       {/* Floating Action Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom - 6 right - 6 z - 40 w - 16 h - 16 rounded - full shadow - 2xl transition - all duration - 300 group flex items - center justify - center overflow - hidden ${
-  isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
-} `}
+        className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full shadow-2xl transition-all duration-300 group flex items-center justify-center overflow-hidden ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+          }`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
         <div className="absolute inset-0 bg-slate-900"></div>
-        <img 
-          src="/stride-ai-orb.png" 
-          alt="Stride AI" 
+        <img
+          src="/stride-ai-orb.png"
+          alt="Stride AI"
           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
         />
         <div className="absolute inset-0 rounded-full border border-white/20"></div>
-        
+
         {/* Pulse effect */}
         <span className="absolute -top-1 -right-1 flex h-4 w-4">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -140,15 +138,15 @@ export const StrideAI: React.FC = () => {
           >
             {/* Background Effects */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] left-[-20%] w-[140%] h-[60%] bg-blue-600/20 blur-[100px] rounded-full"></div>
-                <div className="absolute bottom-[-10%] right-[-10%] w-[80%] h-[40%] bg-cyan-600/10 blur-[80px] rounded-full"></div>
+              <div className="absolute top-[-20%] left-[-20%] w-[140%] h-[60%] bg-blue-600/20 blur-[100px] rounded-full"></div>
+              <div className="absolute bottom-[-10%] right-[-10%] w-[80%] h-[40%] bg-cyan-600/10 blur-[80px] rounded-full"></div>
             </div>
 
             {/* Header */}
             <div className="relative z-10 p-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-lg shadow-cyan-500/20">
-                    <img src="/stride-ai-orb.png" alt="AI" className="w-full h-full object-cover" />
+                  <img src="/stride-ai-orb.png" alt="AI" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg tracking-tight">Stride AI</h3>
@@ -159,20 +157,20 @@ export const StrideAI: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                 <button 
-                    onClick={() => setIsOpen(false)}
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors backdrop-blur-sm"
-                  >
-                    <X size={20} />
-                  </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors backdrop-blur-sm"
+                >
+                  <X size={20} />
+                </button>
               </div>
             </div>
 
             {/* Orb Visualization Area */}
             <div className="relative z-10 flex-shrink-0 h-32 flex items-center justify-center mb-2">
-                <div className="w-32 h-32 relative">
-                    <img src="/stride-ai-orb.png" alt="AI Orb" className="w-full h-full object-contain animate-pulse-slow drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]" />
-                </div>
+              <div className="w-32 h-32 relative">
+                <img src="/stride-ai-orb.png" alt="AI Orb" className="w-full h-full object-contain animate-pulse-slow drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]" />
+              </div>
             </div>
 
             {/* Messages Area */}
@@ -182,33 +180,32 @@ export const StrideAI: React.FC = () => {
                   key={msg.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`flex flex - col ${ msg.sender === 'user' ? 'items-end' : 'items-start' } `}
+                  className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   <div
-                    className={`max - w - [85 %] p - 4 rounded - 2xl text - [15px] leading - relaxed backdrop - blur - md ${
-  msg.sender === 'user'
-    ? 'bg-blue-600 text-white rounded-br-sm shadow-lg shadow-blue-900/20'
-    : 'bg-white/10 text-slate-100 border border-white/10 rounded-bl-sm'
-} `}
+                    className={`max-w-[85%] p-4 rounded-2xl text-[15px] leading-relaxed backdrop-blur-md ${msg.sender === 'user'
+                        ? 'bg-blue-600 text-white rounded-br-sm shadow-lg shadow-blue-900/20'
+                        : 'bg-white/10 text-slate-100 border border-white/10 rounded-bl-sm'
+                      }`}
                   >
                     {msg.text}
                   </div>
-                  
+
                   {/* Action Button */}
                   {msg.action && (
                     <motion.button
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        onClick={() => handleActionClick(msg.action!.path)}
-                        className="mt-2 flex items-center gap-2 px-4 py-2 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 rounded-xl text-cyan-400 text-sm font-medium transition-colors group"
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      onClick={() => handleActionClick(msg.action!.path)}
+                      className="mt-2 flex items-center gap-2 px-4 py-2 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 rounded-xl text-cyan-400 text-sm font-medium transition-colors group"
                     >
-                        {msg.action.label}
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      {msg.action.label}
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </motion.button>
                   )}
 
-                  <div className={`text - [10px] mt - 1.5 px - 1 opacity - 50 ${ msg.sender === 'user' ? 'text-right text-slate-300' : 'text-left text-slate-400' } `}>
+                  <div className={`text-[10px] mt-1.5 px-1 opacity-50 ${msg.sender === 'user' ? 'text-right text-slate-300' : 'text-left text-slate-400'}`}>
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </div>
                 </motion.div>
@@ -229,7 +226,7 @@ export const StrideAI: React.FC = () => {
             <div className="p-4 relative z-20">
               <div className="relative flex items-center gap-2 bg-white/5 border border-white/10 rounded-[2rem] p-1.5 backdrop-blur-md">
                 <button className="p-3 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
-                    <Globe size={20} />
+                  <Globe size={20} />
                 </button>
                 <input
                   type="text"
@@ -254,4 +251,3 @@ export const StrideAI: React.FC = () => {
     </>
   );
 };
-```
