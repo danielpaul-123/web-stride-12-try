@@ -1,0 +1,97 @@
+:root {
+    --acc-text-scale: 1;
+    --acc-line-height: 1.5;
+    --acc-letter-spacing: 0;
+    --acc-text-align: left;
+}
+
+html {
+    font-size: calc(16px * var(--acc-text-scale));
+    line-height: var(--acc-line-height);
+    letter-spacing: var(--acc-letter-spacing);
+}
+
+/* Contrast Modes */
+.acc-contrast-high {
+    filter: contrast(150%);
+}
+
+.acc-contrast-dark {
+    filter: invert(100%) hue-rotate(180deg);
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.acc-contrast-light {
+    filter: contrast(80%) brightness(120%);
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* Highlight Links */
+.acc-highlight-links a {
+    text-decoration: underline !important;
+    color: #ffff00 !important;
+    background-color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Dyslexia Friendly Font */
+.acc-dyslexia-friendly * {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', 'Chalkboard SE', sans-serif !important;
+}
+
+/* Cursor Modes */
+.acc-cursor-big * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewport="0 0 48 48" style="fill:black;stroke:white;stroke-width:2px;"><path d="M0 0 L20 15 L12 18 L24 40 L18 44 L6 22 L0 28 Z" /></svg>'), auto !important;
+}
+
+.acc-cursor-reading-guide {
+    cursor: crosshair !important;
+    /* Ideally this would be a horizontal bar following the cursor, but CSS cursor is limited. 
+     A JS-based overlay would be better for reading guide, but keeping it simple for now. */
+}
+
+/* Pause Animations */
+.acc-pause-animations *,
+.acc-pause-animations *::before,
+.acc-pause-animations *::after {
+    animation-play-state: paused !important;
+    transition: none !important;
+}
+
+/* Hide Images */
+.acc-hide-images img,
+.acc-hide-images video,
+.acc-hide-images svg {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Text Align */
+.acc-force-text-align * {
+    text-align: var(--acc-text-align) !important;
+}
+
+/* Tooltips */
+.acc-tooltips [aria-label]:hover::after,
+.acc-tooltips [title]:hover::after {
+    content: attr(aria-label) attr(title);
+    position: absolute;
+    z-index: 1000;
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.acc-tooltips [aria-label],
+.acc-tooltips [title] {
+    position: relative;
+}

@@ -15,6 +15,8 @@ import { TermsOfService } from './pages/TermsOfService';
 import { JoinUs } from './pages/JoinUs';
 import { Internships } from './pages/Internships';
 import { StrideAI } from './components/StrideAI';
+import { AccessibilityProvider } from './context/AccessibilityContext';
+import { AccessibilityWidget } from './components/AccessibilityWidget';
 
 // ScrollToTop component to ensure pages start at top on navigation
 const ScrollToTop = () => {
@@ -37,31 +39,34 @@ const Designathon = () => (
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-slate-50">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/ecosystem" element={<Ecosystem />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/join" element={<JoinUs />} />
-            <Route path="/internships" element={<Internships />} />
-            <Route path="/designathon" element={<Designathon />} />
-          </Routes>
-        </main>
-        <Footer />
-        <StrideAI />
-      </div>
-    </Router>
+    <AccessibilityProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-slate-50">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/ecosystem" element={<Ecosystem />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/join" element={<JoinUs />} />
+              <Route path="/internships" element={<Internships />} />
+              <Route path="/designathon" element={<Designathon />} />
+            </Routes>
+          </main>
+          <Footer />
+          <StrideAI />
+          <AccessibilityWidget />
+        </div>
+      </Router>
+    </AccessibilityProvider>
   );
 }
 

@@ -368,48 +368,51 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Real Stories */}
+          {/* Real Stories */}
           <div className="grid md:grid-cols-3 gap-8">
-            "Our campus chapter has transformed the way students think about engineering. It's empathy-driven innovation at its finest."
-          </p>
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+              <p className="text-slate-300 italic">
+                "Our campus chapter has transformed the way students think about engineering. It's empathy-driven innovation at its finest."
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* 7. Join Us CTA */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto rounded-[3rem] bg-slate-900 relative overflow-hidden text-center py-20 px-6 shadow-2xl"
+        >
+          {/* Background Effects */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] bg-violet-500/30 blur-[100px] rounded-full origin-center" />
+            <motion.div animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] bg-cyan-500/30 blur-[100px] rounded-full origin-center" />
+          </div>
+
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              Ready to make a <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Difference?</span>
+            </h2>
+            <p className="text-slate-300 text-xl mb-10">
+              Whether you are a student, a professional, or an institution, there is a place for you in the STRIDE mission.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link to="/join" className="px-10 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-cyan-500/25">
+                Get Involved Now
+              </Link>
+              <Link to="/about" className="px-10 py-4 rounded-full bg-transparent border border-slate-600 text-white font-bold hover:bg-white/10 transition-colors">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </section>
     </div>
-        </div >
-      </section >
-
-  {/* 7. Join Us CTA */ }
-  < section className = "py-24 px-4 sm:px-6 lg:px-8 bg-slate-50" >
-    <motion.div
-      initial={{ scale: 0.95, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="max-w-7xl mx-auto rounded-[3rem] bg-slate-900 relative overflow-hidden text-center py-20 px-6 shadow-2xl"
-    >
-      {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] bg-violet-500/30 blur-[100px] rounded-full origin-center" />
-        <motion.div animate={{ rotate: -360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] bg-cyan-500/30 blur-[100px] rounded-full origin-center" />
-      </div>
-
-      <div className="relative z-10 max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">
-          Ready to make a <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Difference?</span>
-        </h2>
-        <p className="text-slate-300 text-xl mb-10">
-          Whether you are a student, a professional, or an institution, there is a place for you in the STRIDE mission.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link to="/join" className="px-10 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-cyan-500/25">
-            Get Involved Now
-          </Link>
-          <Link to="/about" className="px-10 py-4 rounded-full bg-transparent border border-slate-600 text-white font-bold hover:bg-white/10 transition-colors">
-            Learn More
-          </Link>
-        </div>
-      </div>
-    </motion.div>
-      </section >
-    </div >
   );
 };
