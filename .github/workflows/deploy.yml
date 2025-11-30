@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages (Vite)
+name: Build and deploy to GitHub Pages
 
 on:
   push:
@@ -10,31 +10,55 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # repository subfolder that contains your Vite app
+  WORKDIR: ./web-stride-12-try
+  # base url used by Vite (important for correct asset paths)
+  VITE_GH_PAGES_BASE: /web-stride-12-try/
+
 jobs:
-  build-and-deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Node.js setup
+      - name: Show workspace (debug)
+        run: |
+          echo "WORKDIR = $WORKDIR"
+          ls -la
+          ls -la $WORKDIR
+
+      - name: Setup Node.js  (use Node 20 for modern libs)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
+        working-directory: ${{ env.WORKDIR }}
         run: npm ci
 
       - name: Build
+        working-directory: ${{ env.WORKDIR }}
+        env:
+          # ensure Vite builds with correct base (overrides vite.config fallback)
+          VITE_GH_PAGES_BASE: ${{ env.VITE_GH_PAGES_BASE }}
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          # path must point to the generated dist inside the subfolder
+          path: ./web-stride-12-try/dist
+
+  deploy:
+    needs: build-and-publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
