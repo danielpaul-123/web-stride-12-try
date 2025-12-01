@@ -4,6 +4,8 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar: React.FC = () => {
+  // Use Vite-aware URL so asset path respects `base` config
+  const logo = new URL('/stride-logo.webp', import.meta.url).href;
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -41,7 +43,7 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-black tracking-tighter group flex items-center gap-2">
-              <img src="/stride-logo.webp" alt="STRIDE Logo" className="h-12 w-auto" />
+              <img src={logo} alt="STRIDE Logo" className="h-12 w-auto" />
               <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-slate-900'}`}>STRIDE</span>
             </Link>
           </div>
