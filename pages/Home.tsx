@@ -169,16 +169,16 @@ export const Home: React.FC = () => {
 
       {/* 1. Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-dot-slate-200 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] pointer-events-none" />
+        <div className="absolute inset-0 z-0 bg-dot-slate-200 mask-[radial-gradient(ellipse_at_center,white,transparent)] pointer-events-none" />
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-violet-500/10 blur-[120px] rounded-full pointer-events-none"
+          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-160 h-160 bg-violet-500/10 blur-[120px] rounded-full pointer-events-none"
         />
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-0 right-0 translate-x-1/3 w-[30rem] h-[30rem] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"
+          className="absolute bottom-0 right-0 translate-x-1/3 w-120 h-120 bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -199,7 +199,7 @@ export const Home: React.FC = () => {
             className="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]"
           >
             Build for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-600 animate-gradient">EveryBody.</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-b from-cyan-400 to-blue-600 animate-gradient">EveryBody.</span>
           </motion.h1>
 
           <motion.p
@@ -225,6 +225,31 @@ export const Home: React.FC = () => {
             </Link>
           </motion.div>
         </div>
+      </section>
+
+      {/* Trusted Partners Logo Grid */}
+      <section className="max-w-5xl rounded-3xl mt-6 mx-auto pt-6 px-6 pb-6 md:p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center"
+        >
+          <p className="text-lg text-black font-medium">Our Government Partners</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex gap-10 justify-center mt-8 flex-wrap items-center"
+        >
+          <img src="/1.png" alt="Company 1" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+          <img src="/2.png" alt="Company 2" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+          <img src="/3.png" alt="Company 3" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+          <img src="/4.png" alt="Company 4" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+          <img src="/5.png" alt="Company 5" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+          <img src="/6.png" alt="Company 6" className="w-50 h-[80px] object-contain opacity-85 hover:opacity-100 transition-opacity" />
+        </motion.div>
       </section>
 
       {/* 2. Marquee */}
@@ -381,7 +406,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. Join Us CTA */}
+      {/* 8. Join Us CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}

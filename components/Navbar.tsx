@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
     >
       <div
         className={`w-full max-w-7xl mx-4 rounded-2xl px-6 transition-all duration-300 ${scrolled
-          ? 'bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-slate-200/50 py-3'
+          ? 'bg-white/70 backdrop-blur-xl shadow-xl shadow-slate-200/50 py-3'
           : 'bg-transparent py-4'
           }`}
       >

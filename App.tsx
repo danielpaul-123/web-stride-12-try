@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Ecosystem } from './pages/Ecosystem';
-import { Products } from './pages/Products';
-import { Community } from './pages/Community';
-import { GetInvolved } from './pages/GetInvolved';
-import { Gallery } from './pages/Gallery';
-import { News } from './pages/News';
-import { PrivacyPolicy } from './pages/PrivacyPolicy';
-import { TermsOfService } from './pages/TermsOfService';
-import { JoinUs } from './pages/JoinUs';
-import { Internships } from './pages/Internships';
-import { StrideAI } from './components/StrideAI';
 import { AccessibilityProvider } from './context/AccessibilityContext';
-import { AccessibilityWidget } from './components/AccessibilityWidget';
+
+// Lazy load all pages for code splitting
+const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const Ecosystem = lazy(() => import('./pages/Ecosystem').then(m => ({ default: m.Ecosystem })));
+const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.Products })));
+const Community = lazy(() => import('./pages/Community').then(m => ({ default: m.Community })));
+const GetInvolved = lazy(() => import('./pages/GetInvolved').then(m => ({ default: m.GetInvolved })));
+const Gallery = lazy(() => import('./pages/Gallery').then(m => ({ default: m.Gallery })));
+const News = lazy(() => import('./pages/News').then(m => ({ default: m.News })));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const TermsOfService = lazy(() => import('./pages/TermsOfService').then(m => ({ default: m.TermsOfService })));
+const JoinUs = lazy(() => import('./pages/JoinUs').then(m => ({ default: m.JoinUs })));
+const Internships = lazy(() => import('./pages/Internships').then(m => ({ default: m.Internships })));
+
+// Lazy load heavy components
+const StrideAI = lazy(() => import('./components/StrideAI').then(m => ({ default: m.StrideAI })));
+const AccessibilityWidget = lazy(() => import('./components/AccessibilityWidget').then(m => ({ default: m.AccessibilityWidget })));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-slate-200 border-t-slate-900 rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-slate-600 font-medium">Loading...</p>
+    </div>
+  </div>
+);
 
 // ScrollToTop component to ensure pages start at top on navigation
 const ScrollToTop = () => {
@@ -85,26 +99,30 @@ function App() {
         <div className="flex flex-col min-h-screen bg-slate-50">
           <Navbar />
           <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/ecosystem" element={<Ecosystem />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/community" element={<Community />} />
-              <Route path="/get-involved" element={<GetInvolved />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/join" element={<JoinUs />} />
-              <Route path="/internships" element={<Internships />} />
-              <Route path="/designathon" element={<Designathon />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/ecosystem" element={<Ecosystem />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/community" element={<Community />} />
+                <Route path="/get-involved" element={<GetInvolved />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/join" element={<JoinUs />} />
+                <Route path="/internships" element={<Internships />} />
+                <Route path="/designathon" element={<Designathon />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
-          <StrideAI />
-          <AccessibilityWidget />
+          <Suspense fallback={null}>
+            <StrideAI />
+            <AccessibilityWidget />
+          </Suspense>
         </div>
       </Router>
     </AccessibilityProvider>

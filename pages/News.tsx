@@ -6,35 +6,19 @@ import { Calendar, ArrowRight, Tag } from 'lucide-react';
 const newsItems = [
   {
     id: 1,
-    title: "STRIDE Launches Smart Cane V2",
-    date: "March 15, 2024",
-    category: "Product Launch",
-    excerpt: "The new Smart Cane features advanced obstacle detection and haptic feedback, revolutionizing mobility for the visually impaired.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" // Tech innovation
+    title: "STRIDE Forward – Dialogues for Inclusive Innovation!",
+    date: "October 29, 2025",
+    category: "Stride Forward",
+    excerpt: "Looking for inspiration to build technology that truly makes a difference? Join us for an empowering session with Robin Kanattu Thomas, Founder & CEO of Astrek Innovations, as he shares his journey in developing human-centered assistive technologies that redefine mobility and independence. “The Startup Journey Behind Human-Centered Technology”. Date: 31 October 2025",
+    image: "news1.webp" // Tech innovation
   },
   {
     id: 2,
-    title: "Partnership with MIT Innovation Lab",
-    date: "March 10, 2024",
-    category: "Collaboration",
-    excerpt: "A strategic partnership to foster cross-border innovation in assistive technology design and manufacturing.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" // Meeting/Handshake context
-  },
-  {
-    id: 3,
-    title: "Designathon 2024 Winners Announced",
-    date: "February 28, 2024",
-    category: "Events",
-    excerpt: "Team 'Visionary' takes home the grand prize with their affordable braille display prototype.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop" // People celebrating/presenting
-  },
-  {
-    id: 4,
-    title: "New Manufacturing Hub in Kochi",
-    date: "February 15, 2024",
-    category: "Expansion",
-    excerpt: "Expanding our footprint with a state-of-the-art facility employing over 50 PwDs.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" // Factory/Lab interior
+    title: "STRIDE Forward - Dialogues for Inclusive Innovation!",
+    date: "November 27, 2025",
+    category: "Stride Forward",
+    excerpt: "Join us for an empowering session with Dr. Raheemudheen PK , Clinical Psychologist, Dept. of Health Services, Govt. of Kerala, and also the creator of the Behaviour Vaccine model used widely to promote student well-being. \"Understanding Neurodevelopmental Disorders: Current Trends\". Date: 29 November 2025",
+    image: "news2.webp" // Meeting/Handshake context
   }
 ];
 
