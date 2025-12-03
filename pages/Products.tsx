@@ -263,13 +263,29 @@ export const Products: React.FC = () => {
                     <div className="relative w-full h-full">
                       <video
                         ref={videoRef}
-                        src={selectedProduct.video}
                         autoPlay
                         loop
+                        playsInline
                         onTimeUpdate={handleTimeUpdate}
                         onClick={togglePlayPause}
                         className="w-full h-full object-cover cursor-pointer block"
                       >
+                        {/* Prefer VP9/WebM if present, else H.264 MP4 fallback. */}
+                        {selectedProduct.video && (
+                          (() => {
+                            const base = selectedProduct.video.replace(/\.[^/.]+$/, '');
+                            const webm = `${base}.webm`;
+                            const mp4 = `${base}.mp4`;
+                            return (
+                              <>
+                                <source src={webm} type={'video/webm; codecs="vp9"'} />
+                                <source src={mp4} type={'video/mp4'} />
+                                {/* Fallback to original path if browser ignores sources */}
+                                <source src={selectedProduct.video} />
+                              </>
+                            );
+                          })()
+                        )}
                         Your browser does not support the video tag.
                       </video>
                       
